@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/leo-app/static/css/main.e069c1f0.chunk.css",
-    "main.js": "/leo-app/static/js/main.54041b9b.chunk.js",
-    "main.js.map": "/leo-app/static/js/main.54041b9b.chunk.js.map",
+    "main.js": "/leo-app/static/js/main.87c773b1.chunk.js",
+    "main.js.map": "/leo-app/static/js/main.87c773b1.chunk.js.map",
     "runtime-main.js": "/leo-app/static/js/runtime-main.a44b684f.js",
     "runtime-main.js.map": "/leo-app/static/js/runtime-main.a44b684f.js.map",
-    "static/js/2.2d7f0268.chunk.js": "/leo-app/static/js/2.2d7f0268.chunk.js",
-    "static/js/2.2d7f0268.chunk.js.map": "/leo-app/static/js/2.2d7f0268.chunk.js.map",
+    "static/js/2.a705a764.chunk.js": "/leo-app/static/js/2.a705a764.chunk.js",
+    "static/js/2.a705a764.chunk.js.map": "/leo-app/static/js/2.a705a764.chunk.js.map",
     "index.html": "/leo-app/index.html",
-    "precache-manifest.dc46bf72214565bd59c62e034e72d66b.js": "/leo-app/precache-manifest.dc46bf72214565bd59c62e034e72d66b.js",
+    "precache-manifest.d3ca40885c133045bf750e19ab6c8b42.js": "/leo-app/precache-manifest.d3ca40885c133045bf750e19ab6c8b42.js",
     "service-worker.js": "/leo-app/service-worker.js",
     "static/css/main.e069c1f0.chunk.css.map": "/leo-app/static/css/main.e069c1f0.chunk.css.map",
-    "static/js/2.2d7f0268.chunk.js.LICENSE.txt": "/leo-app/static/js/2.2d7f0268.chunk.js.LICENSE.txt"
+    "static/js/2.a705a764.chunk.js.LICENSE.txt": "/leo-app/static/js/2.a705a764.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a44b684f.js",
-    "static/js/2.2d7f0268.chunk.js",
+    "static/js/2.a705a764.chunk.js",
     "static/css/main.e069c1f0.chunk.css",
-    "static/js/main.54041b9b.chunk.js"
+    "static/js/main.87c773b1.chunk.js"
   ]
 }
