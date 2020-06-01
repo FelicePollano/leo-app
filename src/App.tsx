@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from 'react';
 import logo from './logo.svg';
+import github from './GitHub-Mark-Light-32px.png';
 import './App.css';
 import { BrowserRouter as Router,Route,Link } from 'react-router-dom';
 import {PokeList} from "./components/pokelist"
@@ -25,7 +26,7 @@ function App() {
           
         </Route>
       </Router>
-      <div className="pokefooter">Created in may 2020, by Leo and Felice Pollano. Learning by teaching React :)</div>
+      <div className="pokefooter">Created in may 2020, by Leo and Felice Pollano. Learning by teaching React :) <a href="https://github.com/FelicePollano/leo-app"><img className="github-icon" src={github}></img></a></div>
      
     </div>
   );
