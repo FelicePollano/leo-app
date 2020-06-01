@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.leostyle{
+  background-color: aqua;
+  color: red;
+  padding: 60px;
+  border: 5px solid green;
+  position: relative;;
+  top:-100px;
+  left:5px;
+  opacity: 67%;
+  border-radius: 16px;
+  box-shadow:5px 10px #1f1c1c;
+}
+.leoinput{
+  background-color: rgb(134, 49, 49);
+  font-size: 30px;
+  font-family: 'Cambria';
+}
