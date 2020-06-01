@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/leo-app/static/css/main.e069c1f0.chunk.css",
-    "main.js": "/leo-app/static/js/main.32d965f9.chunk.js",
-    "main.js.map": "/leo-app/static/js/main.32d965f9.chunk.js.map",
+    "main.js": "/leo-app/static/js/main.c562ccb8.chunk.js",
+    "main.js.map": "/leo-app/static/js/main.c562ccb8.chunk.js.map",
     "runtime-main.js": "/leo-app/static/js/runtime-main.a44b684f.js",
     "runtime-main.js.map": "/leo-app/static/js/runtime-main.a44b684f.js.map",
     "static/js/2.2d7f0268.chunk.js": "/leo-app/static/js/2.2d7f0268.chunk.js",
     "static/js/2.2d7f0268.chunk.js.map": "/leo-app/static/js/2.2d7f0268.chunk.js.map",
     "index.html": "/leo-app/index.html",
-    "precache-manifest.96773e4ef7f0d18b5a70228272d3e20f.js": "/leo-app/precache-manifest.96773e4ef7f0d18b5a70228272d3e20f.js",
+    "precache-manifest.76949c847110ae10caf26c7edac88e4b.js": "/leo-app/precache-manifest.76949c847110ae10caf26c7edac88e4b.js",
     "service-worker.js": "/leo-app/service-worker.js",
     "static/css/main.e069c1f0.chunk.css.map": "/leo-app/static/css/main.e069c1f0.chunk.css.map",
     "static/js/2.2d7f0268.chunk.js.LICENSE.txt": "/leo-app/static/js/2.2d7f0268.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.a44b684f.js",
     "static/js/2.2d7f0268.chunk.js",
     "static/css/main.e069c1f0.chunk.css",
-    "static/js/main.32d965f9.chunk.js"
+    "static/js/main.c562ccb8.chunk.js"
   ]
 }
