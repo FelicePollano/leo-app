@@ -33,7 +33,7 @@ export const PokeList:React.FC = ()=>{
             prev=l.previous;
             setNext(next?.substring(next.indexOf('?')+1));
             setPrevious(prev?.substring(next.indexOf('?')+1));
-            setPagecount(l.count/20)
+            setPagecount(Math.round(l.count/20)+1)
         });
     }
     const selectPokemon=(uri:String)=>{
@@ -55,7 +55,7 @@ export const PokeList:React.FC = ()=>{
         }
         
         fethcData(offset);
-    },[]);
+    },page);
    return <div >
        <div className="pokelist">
        <ul>{pokemons?.map((u,i)=><li onClick={()=>navigateTo(u.url)} onMouseEnter={()=>selectPokemon(u.url)} key={i}>{u.name}</li>)}</ul>
