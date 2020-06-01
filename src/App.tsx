@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       
-      <Router>
+      <Router basename="/leo-app">
         <Route exact path={["/","/pokemon","/pokemon/page/:page"]}>
         <div className="pokename">Pokemon Browser</div>
           <PokeList/>

@@ -11,7 +11,7 @@ export const PokeDetails:React.FC<PokeDetailProps> = (props)=>{
     const [flavs,setFlavours]=useState<String[]>();
     const intl = useIntl();
     useEffect(()=>{
-        fetch("/pokemon-species/"+props.id).then(data=>data.json())
+        fetch("https://pokeapi.co/api/v2/pokemon-species/"+props.id).then(data=>data.json())
         .then(l=>{
             console.log(l);
             var flavours:String[];

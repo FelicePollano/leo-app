@@ -28,7 +28,7 @@ export const PokeList:React.FC = ()=>{
 
 
     const fethcData=(page:String)=>{
-        fetch("/pokemon?"+page).then(data=>data.json())
+        fetch("https://pokeapi.co/api/v2/pokemon?"+page).then(data=>data.json())
         .then(l=>{
             var next:string;
             var prev:string;

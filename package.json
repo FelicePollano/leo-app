@@ -2,8 +2,8 @@
   "name": "leo-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://pokeapi.co/api/v2/",
-  "homepage": "https://felicepollano.github.io/leo-app",
+  
+  "homepage": "https://felicepollano.github.io/leo-app/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
