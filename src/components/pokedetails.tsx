@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react';
+import { useIntl } from 'react-intl';
 
 interface PokeDetailProps{
     id:number;
@@ -8,6 +9,7 @@ export const PokeDetails:React.FC<PokeDetailProps> = (props)=>{
 
     const [det,setDetails]=useState<any>();
     const [flavs,setFlavours]=useState<String[]>();
+    const intl = useIntl();
     useEffect(()=>{
         fetch("/pokemon-species/"+props.id).then(data=>data.json())
         .then(l=>{
@@ -16,7 +18,7 @@ export const PokeDetails:React.FC<PokeDetailProps> = (props)=>{
             flavours=[];
             for(var i in l.flavor_text_entries){
                
-                if(l.flavor_text_entries[i].language.name==="it"){
+                if(l.flavor_text_entries[i].language.name===intl.locale){
                     flavours.push(l.flavor_text_entries[i].flavor_text);
                 }
             }

@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 
-import { useHistory,useParams } from 'react-router-dom';
+import { useHistory,useParams,useLocation } from 'react-router-dom';
 import {Pager} from './pager';
 
 
@@ -9,20 +9,24 @@ import {Pager} from './pager';
 
 export const PokeList:React.FC = ()=>{
   
+    const history = useHistory();
+    const location = useLocation();
     const [pokemons,setPokemons] = useState<any[]>();
     const [pageCount,setPagecount] = useState<number>(0);
-    const [next,setNext] = useState<string>();
-    const [prev,setPrevious] = useState<string>();
-    const [pokeid,setPokeid] = useState<Number>();
-    const [currentPage,setCurrentPage] = useState<number>(1);
+    
+    let currentId:number|undefined;
+    if(location.search.startsWith("?id=")){
+        currentId = parseInt(location.search.substring(4));
+    }
+
+    const [pokeid,setPokeid] = useState<Number>(currentId??0);
+   
     let {page} = useParams();
-    const moveNext=()=>{
-       fethcData(next??"");
-    };
-    const movePrev=()=>{
-        fethcData(prev??"");
-     };
-    const history = useHistory();
+    
+    
+
+
+
     const fethcData=(page:String)=>{
         fetch("/pokemon?"+page).then(data=>data.json())
         .then(l=>{
@@ -31,19 +35,30 @@ export const PokeList:React.FC = ()=>{
             setPokemons(l.results);
             next = l.next;
             prev=l.previous;
-            setNext(next?.substring(next.indexOf('?')+1));
-            setPrevious(prev?.substring(next.indexOf('?')+1));
-            setPagecount(Math.round(l.count/20)+1)
+            
+            setPagecount(Math.round(l.count/20));
         });
     }
     const selectPokemon=(uri:String)=>{
-       var chunks = uri.split("/");
-       setPokeid(parseInt(chunks[chunks.length-2]));
+       
+       let chunks = uri.split("/");
+       let id = parseInt(chunks[chunks.length-2]);
+       setPokeid(id);
+      
     }
+    const isActive=(uri:String):boolean=>{
+       
+        let chunks = uri.split("/");
+        let id = parseInt(chunks[chunks.length-2]);
+        return id === pokeid;
+       
+     }
     const navigateTo=(uri:String)=>{
         var chunks = uri.split("/");
-        
-        history.push("/pokemon/"+chunks[chunks.length-2]);
+        let id = parseInt(chunks[chunks.length-2]);
+        location.search="?id="+id;
+        history.push(location); // push a convenient way to come back to the selected pokemon
+        history.push("/pokemon/"+id);
        
      }
     useEffect(()=>{
@@ -55,17 +70,17 @@ export const PokeList:React.FC = ()=>{
         }
         
         fethcData(offset);
-    },page);
+    },[page]);
    return <div >
        <div className="pokelist">
-       <ul>{pokemons?.map((u,i)=><li onClick={()=>navigateTo(u.url)} onMouseEnter={()=>selectPokemon(u.url)} key={i}>{u.name}</li>)}</ul>
+       <ul>{pokemons?.map((u,i)=><li className={isActive(u.url)?"pokelist-selected":""} onClick={()=>navigateTo(u.url)} onMouseEnter={()=>selectPokemon(u.url)} key={i}>{u.name}</li>)}</ul>
        </div>
        <div className="pokeimage-container">
            <img className="pokeimage" src={"https://pokeres.bastionbot.org/images/pokemon/"+pokeid+".png"}></img>
       </div>
-   <Pager pageCount={pageCount} onPageSelected={(p)=>history.push("/pokemon/page/"+p)}></Pager>
-   <button  onClick={movePrev}>Previous</button>
-   <button onClick={moveNext}>NEXT</button>
+    <div className="pager-container">  
+        <Pager pageCount={pageCount} pageSelected={page} onPageSelected={(p)=>history.push("/pokemon/page/"+p)}></Pager>
+   </div> 
    
    </div> ;
   

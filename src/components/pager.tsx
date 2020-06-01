@@ -10,21 +10,28 @@ interface PagerProps{
     pageCount:number;
     pagesLen?:number;
     onPageSelected:((page:number)=>void);
+    pageSelected?:string;
 }
 
 export const Pager:React.FC<PagerProps> = (props)=>{
-    const [firstVisible,setFirstVisible] = useState<number>(1);
-    const [pageSelected,setPageSelected] = useState<number>(1);
+    let ps = 1;
+    if( props.pageSelected ){
+        ps = parseInt(props.pageSelected);
+    }
+    const [firstVisible,setFirstVisible] = useState<number>(ps);
+    const [pageSelected,setPageSelected] = useState<number>(ps);
     let fl = props.firstLabel??"First";
     let lp = props.lastLabel??"Last";
     let pl =props.prevLabel??"«";
     let nl = props.nextLabel??"»";
     let ol = props.omissisLabel??"...";
     let visible = props.pagesLen??3;
+    
     const getPages=(visible:number)=>{
         let items: any[] =[];
         let max = Math.min(firstVisible+visible-1,props.pageCount);
-        for(let i=Math.round(firstVisible);i<=Math.round(max);i++){
+        for(let i=firstVisible;i<=max;i++){
+           
             items.push(<li className={"pager-page "+(i===pageSelected?"pager-page-selected":"")} 
             key={i}
             onClick={()=>{setPageSelected(i);props.onPageSelected(i);}}
@@ -88,6 +95,7 @@ export const Pager:React.FC<PagerProps> = (props)=>{
         setPageSelected(props.pageCount);
         props.onPageSelected(props.pageCount);
     }
+    
     return <ul className="pager-list">
         <li className="pager-first" onClick={First}>{fl}</li>
         <li className="pager-page" onClick={Prev}>{pl}</li>
