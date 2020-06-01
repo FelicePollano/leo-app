@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react';
 import logo from './logo.svg';
 import github from './GitHub-Mark-Light-32px.png';
 import './App.css';
-import { BrowserRouter as Router,Route,Link } from 'react-router-dom';
+import { HashRouter as Router,Route,Link } from 'react-router-dom';
 import {PokeList} from "./components/pokelist"
 import {PokeDetails} from "./components/pokedetails"
 
@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       
-      <Router basename="/leo-app">
+      <Router>
         <Route exact path={["/","/pokemon","/pokemon/page/:page"]}>
         <div className="pokename">Pokemon Browser</div>
           <PokeList/>
