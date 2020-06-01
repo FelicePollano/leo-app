@@ -1,4 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a toy tutorial application, using [Pokemon API](https://pokeapi.co/) to create a Pokemon browser application.
+The project cover the following topic:
+
+* Functional components with Typescript
+* `useState`, `useEffect`
+* `useIntl`  from `react-intl`
+* `useHistory` from `react-user-dom`
+* `HashRouter`, the app works even with `BrowserRouter` by simple replacing it, but HahRouter is a key feature to host on Github Pages
+* Minimal usage, no bloating from external components and styles
+* Hosting on Github pages, see additional scripts below:
+
 
 ## Available Scripts
 
@@ -36,6 +47,16 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+### `yarn deploy`
+Application can be deployed directly on Github pages by this command. Installing gh-pages is required: `yarn add gh-pages`
+the app will be deployed at yourusername.github.io/leo-app. `HashRouter` allow this app to work without a proxy middleware.
+
+
+
+## Some screenshots
+![s1](./shot1.png)
+![s2](./shot2.png)
 
 ## Learn More
 
