@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c2a0bc1b90642cbfbbaea4c215f57f40",
+    "revision": "6a54cff62646307baa1ba940a4959d84",
     "url": "/leo-app/index.html"
   },
   {
-    "revision": "3a8c79a8921ff82e6804",
+    "revision": "8b03fa05769f59afbd9d",
     "url": "/leo-app/static/css/main.e069c1f0.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/leo-app/static/js/2.2d7f0268.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3a8c79a8921ff82e6804",
-    "url": "/leo-app/static/js/main.38591acb.chunk.js"
+    "revision": "8b03fa05769f59afbd9d",
+    "url": "/leo-app/static/js/main.32d965f9.chunk.js"
   },
   {
     "revision": "9bc6405826c95386683b",
